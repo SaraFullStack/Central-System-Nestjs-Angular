@@ -1,0 +1,29 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Create Charge Point</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Edit Charge Point</h1>
+
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="data.id" disabled="true" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Identity</mat-label>
+    <input matInput [(ngModel)]="data.identity" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Charge Point Operator</mat-label>
+    <mat-select matInput [(ngModel)]="data.cpo">
+      <mat-option *ngFor="let organization of organizations" [value]="organization.id">
+        {{organization.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Edit</button>
+</div>

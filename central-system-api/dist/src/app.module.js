@@ -14,6 +14,8 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const schedule_1 = require("@nestjs/schedule");
 const configuration_1 = require("../config/configuration");
+const organizations_module_1 = require("./organizations/organizations.module");
+const charge_points_module_1 = require("./charge-points/charge-points.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,6 +27,8 @@ AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot(),
             schedule_1.ScheduleModule.forRoot(),
+            organizations_module_1.OrganizationsModule,
+            charge_points_module_1.ChargePointsModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [

@@ -6,6 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ScheduleModule } from '@nestjs/schedule';
 import configuration from '../config/configuration';
+import { OrganizationsModule } from './organizations/organizations.module';
+import { ChargePointsModule } from './charge-points/charge-points.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import configuration from '../config/configuration';
     }),
     TypeOrmModule.forRoot(),
     ScheduleModule.forRoot(),
+    OrganizationsModule,
+    ChargePointsModule
   ],
   controllers: [AppController],
   providers: [

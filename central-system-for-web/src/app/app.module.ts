@@ -16,14 +16,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Organization } from './models/Organization';
 import { MatSelectModule } from '@angular/material/select';
+import { ChargePointComponent } from './views/charge-point/charge-point.component';
+import { ChargePointDialogComponent } from './views/charge-point/charge-point-dialog/charge-point-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     OrganizationComponent,
     HeaderComponent,
     OrganizationDialogComponent,
+    ChargePointComponent,
+    ChargePointDialogComponent,
   ],
   imports: [
     BrowserModule,
